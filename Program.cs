@@ -1,13 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-//cibo utente
-string myCibo;
-Console.WriteLine("Qaul è il tuo cibo preferito?");
-myCibo = Console.ReadLine();
+
 
 
 string[] cibi = { "Lasagna", "Tiramisù", "Arancino", "Pizza", "Gelato" };
-
+//cibo utente
+string myCibo;
+do
+{
+    Console.WriteLine("Qaul è il tuo cibo preferito?");
+    myCibo = Console.ReadLine();
+} while (!Array.Exists(cibi, x => x == myCibo));
 //cibo pc
 Random nRand = new Random();
 
@@ -37,7 +40,6 @@ for (int i = 0; i < cibi.Length; i++)
     {
         Console.WriteLine($"{i + 1}. {cibi[i]}");
     }
-
 }
 
 Console.WriteLine($"Primo cibo in calssifica: {cibi[0]}");
